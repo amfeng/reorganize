@@ -21,15 +21,19 @@
 <!-- Start: Center Wrap -->
 <div id="wrapper">
 <div id='header'><h1>REorganize.</h1></div>
-<div>
+<div style='margin:auto'>
 	<div id='toolbar'>
+		<div id='blurb' class='add-widget'>
+			<p>With REOrganize, you can easily simulate arranging your furniture in your room to figure out what works best.</p>
+			<p>Just quickly measure the room and dimensions of your furniture (bed, desk), add them on the simulator, and drag/rotate away!</p>
+		</div>
 		<div id='create-room' class='add-widget'>
 			<h2>Edit Room</h2>
 			<p>*This will destroy the current room</p>
 			<p id='room-error' class='error'></p>
 			<p>Height <input id='room-height' type="text">"</p>
 			<p>Width <input id='room-width' type="text">"</p>
-			<p><input id='room-submit' type="submit" value="Submit" /></p>
+			<p><input id='room-submit' type="submit" value="Update" /></p>
 		</div>
 		<div id='create-door' class='add-widget'>
 			<h2>Add Door/Closet</h2>
@@ -42,14 +46,14 @@
 			  <option value="bottom">Bottom</option>
 			</select></p>
 			<p>Size <input id='door-size' type="text"></p>
-			<p><input id='door-submit' type="submit" value="Submit" /></p>
+			<p><input id='door-submit' type="submit" value="Add" /></p>
 		</div>
 		<div id='create-rect' class='add-widget'>
 			<h2>Add Rectangle (beds, desks, etc.)</h2>
 			<p id='rect-error' class='error'></p>
 			<p>Height <input id='rect-height' type="text">"</p>
 			<p>Width <input id='rect-width' type="text">"</p>
-			<p><input id='rect-submit' type="submit" value="Submit" /></p>
+			<p><input id='rect-submit' type="submit" value="Add" /></p>
 		</div>
 	</div>
 

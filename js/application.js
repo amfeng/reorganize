@@ -6,7 +6,7 @@ var numCloset = 0;
 
 $(function(){
 	
-	createRoom(120, 120);
+	createRoom(160, 120);
 	
 	$('#room-height').attr('value', parseInt($('.room').css('height'))/factor);
 	$('#room-width').attr('value', parseInt($('.room').css('width'))/factor);

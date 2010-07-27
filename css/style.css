@@ -9,7 +9,8 @@ Last edited: July 25, 2010, 8:58 pm
 
 /*  Main  */
 body {
- font-family: Arial, Helvetica, sans-serif;
+ font-family: "Nobile", Helvetica, Arial, sans-serif;
+ color: #666;
  font-size: 13px;
 	height: 100%;
 }
@@ -37,6 +38,8 @@ h1{
 
 #toolbar{
 	float: left;
+	margin-top: 10px;
+	width: 200px;
 }
 
 #canvas{
@@ -99,4 +102,8 @@ h1{
 
 .error{
 	color: red;
+}
+
+#blurb p{
+	margin-top: 5px;
 }
