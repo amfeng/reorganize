@@ -24,6 +24,10 @@ $(function(){
 	$('#room-height').attr('value', parseInt($('.room').css('height'))/factor);
 	$('#room-width').attr('value', parseInt($('.room').css('width'))/factor);
 	
+	$('#canvas').mouseleave(function(){
+		$('.float-info').hide();
+	});
+	
 });
 
 function createRoom(x, y){
@@ -39,7 +43,7 @@ function createRect(x, y){
 	
 	currRect = $('.room > #rect-' + numRect).css('position', 'absolute');
 	currRect.append("<div class='rect'></div>");
-	currRect.children('.rect').append("<div class='info' style='display:none'></div>");
+	currRect.children('.rect').append("<div class='info'></div>");
 	
 	currRect.css('height', y*factor).css('width', x*factor).css('padding', margin);
 	currRect.draggable({ 
@@ -64,6 +68,7 @@ function createRect(x, y){
 		}
 	});*/
 	$('.rect-margin').hover(function(){
+		$('.float-info').hide();
 		rectContainer = $(this);
 		rectContainer.find('.info').show();
 	
@@ -81,57 +86,84 @@ function createRect(x, y){
 
 function createDoor(wall, size){
 	numDoor++;
-	$('.room').append("<div class='door' id='door-" + numDoor + "'></div>");
+	$('.room').append("<div class='door " + wall + "'  id='door-" + numDoor + "'></div>");
 	currDoor = $('.room > #door-' + numDoor).css('position', 'absolute');
 	
-	currDoor.append("<div class='info' style='display:none;'></div>");
-	
-	currInfo = currDoor.find('.info');
-	currInfo.append("<div class='delete'></div>");
-	
+	$('#canvas').append($("<div class='float-info' id='door-" + numDoor + "-info'></div>").append("<div class='delete'></div>"));
 	
 	$('.door').hover(function(){
-		doorContainer = $(this);
-		currDoor.find('.info').show();
-		currInfo.find('.delete').click(function(){
+		$('.float-info').hide();
+		currDoor = $(this)
+		currInfo = resetInfoPosition(currDoor, currDoor.attr('class').split(' ')[1]).show();
+		currInfo.children('.delete').click(function(){
 			currDoor.remove();
+			$(this).parent().remove();
 		});
 	}, function(){
-		$(this).find('.info').hide();
 	});
+	
+	function resetInfoPosition(ele, side){
+		if(side == 'top' || side == 'left') return $('#' + ele.attr('id') + '-info').css('top', ele.offset().top).css('left', ele.offset().left);
+		else if(side == 'right') return $('#' + ele.attr('id') + '-info').css('top', ele.offset().top).css('left', ele.offset().left + 6); //right
+		return $('#' + ele.attr('id') + '-info').css('top', ele.offset().top + 6).css('left', ele.offset().left); //bottom
+	}
 	
 	switch(wall){
 		
 		case 'top':	
-			currDoor.css('borderBottom', '4px solid #666').css('width', size*factor).css('height', 16).css('marginTop', -16);
+			currDoor.css('width', size*factor).css('height', 22).css('marginTop', -16);
 			currDoor.draggable({ 
 				containment: 'parent',
 				grid: [factor, factor],
-				axis: 'x'
+				axis: 'x',
+				drag: function() {
+					resetInfoPosition($(this), wall);
+				},
+				stop: function() {
+					resetInfoPosition($(this), wall);
+				}
 			});
 			break;
 		case 'left':
-			currDoor.css('borderRight', '4px solid #666').css('height', size*factor).css('width', 16).css('marginLeft', -16);
+			currDoor.css('height', size*factor).css('width', 22).css('marginLeft', -16);
 			currDoor.draggable({ 
 				containment: 'parent',
 				grid: [factor, factor],
-				axis: 'y'
+				axis: 'y',
+				drag: function() {
+					resetInfoPosition($(this), wall);
+				},
+				stop: function() {
+					resetInfoPosition($(this), wall);
+				}
 			});
 			break;
 		case 'right':
-			currDoor.css('borderLeft', '4px solid #666').css('height', size*factor).css('width', 16).css('marginRight', -16).css('right', 0);
+			currDoor.css('height', size*factor).css('width', 22).css('marginRight', -16).css('right', 0);
 			currDoor.draggable({ 
 				containment: 'parent',
 				grid: [factor, factor],
-				axis: 'y'
+				axis: 'y',
+				drag: function() {
+					resetInfoPosition($(this), wall);
+				},
+				stop: function() {
+					resetInfoPosition($(this), wall);
+				}
 			});
 			break;
 		case 'bottom':
-			currDoor.css('borderTop', '4px solid #666').css('width', size*factor).css('height', 16).css('marginBottom', -16).css('bottom', 0);
+			currDoor.css('width', size*factor).css('height', 22).css('marginBottom', -16).css('bottom', 0);
 			currDoor.draggable({ 
 				containment: 'parent',
 				grid: [factor, factor],
-				axis: 'x'
+				axis: 'x',
+				drag: function() {
+					resetInfoPosition($(this), wall);
+				},
+				stop: function() {
+					resetInfoPosition($(this), wall);
+				}
 			});
 			break;
 		default:

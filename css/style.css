@@ -41,11 +41,11 @@ h1{
 }
 
 #canvas{
-	margin-left: 50px;
+	margin-left: 10px;
 	float:left;
 }
 .room {
-	margin: auto;
+	margin: 16px;
 	background: #ddd;
 	position: relative;
 	overflow: hidden;
@@ -80,9 +80,15 @@ h1{
 .rect-margin:hover .rect{
 	background: #bbb;
 }
-
+.info{
+	display:none;
+}
+.float-info{
+	display: none;
+	position: absolute;
+}
 .door {
-	z-index: 100;
+	background: #666;
 }
 .add-widget{
 	padding: 10px;
