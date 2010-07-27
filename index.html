@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta name="generator" content="InstantBlueprint.com - Create a web project framework in seconds." />
+ <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>REorganize</title>
+ <meta name="description" content="" />
+ <meta name="keywords" content="" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+  <link href=' http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+  
+</head>
+<body>
+<!-- Start: Center Wrap -->
+<div id="wrapper">
+<div id='header'><h1>REorganize.</h1></div>
+<div>
+	<div id='toolbar'>
+		<div id='create-room' class='add-widget'>
+			<h2>Edit Room</h2>
+			<p>*This will destroy the current room</p>
+			<p>Height <input id='room-height' type="text">"</p>
+			<p>Width <input id='room-width' type="text">"</p>
+			<p><input id='room-submit' type="submit" value="Submit" /></p>
+		</div>
+		<div id='create-door' class='add-widget'>
+			<h2>Add Door/Closet</h2>
+			<p>Which wall?
+			<select id='door-select'>
+			  <option value="top">Top</option>
+			  <option value="left">Left</option>
+			  <option value="right">Right</option>
+			  <option value="bottom">Bottom</option>
+			</select></p>
+			<p>Size <input id='door-size' type="text"></p>
+			<p><input id='door-submit' type="submit" value="Submit" /></p>
+		</div>
+		<div id='create-rect' class='add-widget'>
+			<h2>Add Rectangle (beds, desks, etc.)</h2>
+			<p>Height <input id='rect-height' type="text">"</p>
+			<p>Width <input id='rect-width' type="text">"</p>
+			<p><input id='rect-submit' type="submit" value="Submit" /></p>
+		</div>
+	</div>
+
+	<div id='canvas'></div>
+	<div class='clear'></div>
+</div>
+
+</div><!-- End: Center Wrap -->
+ </body>
+</html>

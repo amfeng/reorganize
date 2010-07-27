@@ -1,0 +1,89 @@
+/*
+CSS file created with:Instant Blueprint - Create a web project framework in seconds.
+ http://instantblueprint.com
+
+Project: Type your project name here ...
+File: css/style.css
+Last edited: July 25, 2010, 8:58 pm
+*/
+
+/*  Main  */
+body {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 13px;
+	height: 100%;
+}
+
+h1{
+	font-family: "Yanone Kaffeesatz";
+	color: #ccc;
+	text-transform: uppercase;
+	font-size: 8em;
+}
+
+.clear{
+	clear:both;
+	padding: 10px;
+}
+
+#wrapper {
+ margin:0 auto;
+ width:900px; /*  Change to desired width :)  */
+}
+
+#header{
+	padding: 20px;
+	text-align: center;
+}
+
+#toolbar{
+	float: left;
+}
+
+#canvas{
+	margin-left: 50px;
+	float:left;
+}
+.room {
+	margin: auto;
+	background: #ddd;
+	position: relative;
+	overflow: hidden;
+}
+
+.rotate {
+	float:left;
+	height: 16px;
+	width: 16px;
+	background: url('../images/rotate.png');
+}
+.delete {
+	float:right;
+	height: 16px;
+	width: 16px;
+	background: url('../images/delete.png');
+}
+
+.rect {
+	background: #ccc;
+	width: 100%;
+	height: 100%;
+}
+
+.rect .dim{
+	font-family: "Yanone Kaffeesatz";
+	font-size: 1.5em;
+	color: #eee;
+	clear:both;
+	text-align: center;
+}
+.rect-margin:hover .rect{
+	background: #bbb;
+}
+
+.door {
+	z-index: 100;
+}
+.add-widget{
+	padding: 10px;
+}
