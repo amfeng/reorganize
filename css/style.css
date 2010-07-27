@@ -23,7 +23,6 @@ h1{
 
 .clear{
 	clear:both;
-	padding: 10px;
 }
 
 #wrapper {
@@ -44,8 +43,12 @@ h1{
 	margin-left: 10px;
 	float:left;
 }
+
+#footer{
+	text-align: center;
+}
 .room {
-	margin: 16px;
+	margin: 24px;
 	background: #ddd;
 	position: relative;
 	overflow: hidden;
@@ -92,4 +95,8 @@ h1{
 }
 .add-widget{
 	padding: 10px;
+}
+
+.error{
+	color: red;
 }
