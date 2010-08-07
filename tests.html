@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" type="text/css" media="screen" />
+  <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
+  <script type="text/javascript" src="js/application.js"></script>
+  <script type="text/javascript" src="js/qunit-tests.js"></script>
+  
+</head>
+<body>
+  <h1 id="qunit-header">REOrganize QUnit Testing Suite</h1>
+ <h2 id="qunit-banner"></h2>
+ <h2 id="qunit-userAgent"></h2>
+ <ol id="qunit-tests"></ol>
+
+ <div style='display:none'>
+	<div id='toolbar'>
+		<div id='blurb'>
+			With REOrganize, you can easily simulate arranging your furniture in your room to figure out what works best. Just quickly measure the room and dimensions of your furniture (bed, desk), add them on the simulator, and drag/rotate away!
+		</div>
+		<div id='create-room' class='add-widget'>
+			<h2>Edit Room</h2>
+			<p>*This will destroy the current room</p>
+			<p id='room-error' class='error'></p>
+			<p>Height <input id='room-height' type="text">"</p>
+			<p>Width <input id='room-width' type="text">"</p>
+			<p><input id='room-submit' type="submit" value="Update" /></p>
+		</div>
+		<div id='create-door' class='add-widget'>
+			<h2>Add Door/Closet</h2>
+			<p id='door-error' class='error'></p>
+			<p>Which wall?
+			<select id='door-select'>
+			  <option value="top">Top</option>
+			  <option value="left">Left</option>
+			  <option value="right">Right</option>
+			  <option value="bottom">Bottom</option>
+			</select></p>
+			<p>Length <input id='door-size' type="text">"</p>
+			<p><input id='door-submit' type="submit" value="Add" /></p>
+		</div>
+		<div id='create-rect' class='add-widget'>
+			<h2>Add Rectangle (beds, desks, etc.)</h2>
+			<p id='rect-error' class='error'></p>
+			<p>Height <input id='rect-height' type="text">"</p>
+			<p>Width <input id='rect-width' type="text">"</p>
+			<p><input id='rect-submit' type="submit" value="Add" /></p>
+		</div>
+	</div>
+
+	<div id='canvas'></div>
+	<div class='clear'></div>
+</div>
+</body>
+</html>
