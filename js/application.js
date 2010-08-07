@@ -107,7 +107,7 @@ function createDoor(wall, size){
 	
 	if(wall == 'top' || wall == 'bottom'){
 		validated = validateDimensions(size, 1);
-	} else if(wall == 'left' || wall == 'bottom'){
+	} else if(wall == 'left' || wall == 'right'){
 		validated = validateDimensions(1, size);
 	} else{
 		validated = false;
